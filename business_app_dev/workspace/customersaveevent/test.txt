@@ -1,0 +1,102 @@
+function showEvents($conn){
+    $sql = "SELECT * FROM companyEventAdd";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()){
+        $id = $row['uid'];
+        $sql2 ="SELECT * FROM CompanyLog WHERE id='$id'";
+        $result2 =$conn->query($sql2);
+    
+    if($row2 =$result2->fetch_assoc()){
+        echo"
+        <div class='col-md-8 order-md-1'>
+          <div class='panel panel-default'>
+             <div class='panel-heading'>
+               <h3 class='panel-title'>{$row2['uname']}&nbsp;:&nbsp;{$row['name']}</h3>
+             </div>
+             <div class='panel-body'>
+               <p>
+                  Description&nbsp;:&nbsp;{$row['des']}<br>
+                  Address&nbsp;:&nbsp;{$row['address']},&nbsp;{$row['address2']},&nbsp;{$row['country']},&nbsp;{$row['city']},&nbsp;{$row['eircode']}<br>
+                  Date&nbsp;:&nbsp;{$row['startDate']}~{$row['endDate']}
+              </p>
+                  <a href='hybirdweb.php'><button name='backAdd' class='btn btn-primary'>Back to Add Page</button></a>
+                  <hr>
+             </div>
+           </div>
+        </div>";
+       }
+    }
+    
+}
+    
+    
+    
+
+    
+    
+    function showEvents($conn){
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM companyEventAdd WHERE uid='$id'";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()){
+        $id = $row['uid'];
+        $sql2 ="SELECT * FROM CompanyLog WHERE id='$id'";
+        $result2 =$conn->query($sql2);
+    
+    if($row2 =$result2->fetch_assoc()){
+        echo"
+        <div class='col-md-8 order-md-1'>
+          <div class='panel panel-default'>
+             <div class='panel-heading'>
+               <h3 class='panel-title'>{$row2['uname']}&nbsp;:&nbsp;{$row['name']}</h3>
+             </div>
+             <div class='panel-body'>
+               <p>
+                  Description&nbsp;:&nbsp;{$row['des']}<br>
+                  Address&nbsp;:&nbsp;{$row['address']},&nbsp;{$row['address2']},&nbsp;{$row['country']},&nbsp;{$row['city']},&nbsp;{$row['eircode']}<br>
+                  Date&nbsp;:&nbsp;{$row['startDate']}~{$row['endDate']}
+              </p>
+                  <a href='hybirdweb.php'><button name='backAdd' class='btn btn-primary'>Back to Add Page</button></a>
+                  <hr>
+             </div>
+           </div>
+        </div>";
+       }
+    }
+    
+}
+
+/* Not use
+function getEvents($conn){
+    $sql = "SELECT * FROM companyEventAdd";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()){
+        $id = $row['uid'];
+        $sql2 ="SELECT * FROM CompanyLog WHERE id='$id'";
+        $result2 =$conn->query($sql2);
+    
+    if($row2 =$result2->fetch_assoc()){
+        echo "<div class='event-box'><p>";
+        echo $row2['uname']."<br>";
+        echo $row['name']."<br>";
+        echo $row['des']."<br>";
+        echo $row['address']."<br>";
+        echo $row['address2']."<br>";
+        echo $row['country']."<br>";
+        echo $row['city']."<br>";
+        echo $row['eircode']."<br>";
+        echo $row['startDate']."<br>";
+        echo $row['endDate']."<br>";
+        
+        echo "</p>";
+        
+        echo "</div>";
+        
+        echo "<a href='showEvent.php'><button class='btn btn-primary'>Back</button></a>";
+        
+
+       }
+    }
+}
+
+*/

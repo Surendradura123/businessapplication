@@ -1,0 +1,14 @@
+# @ref: https://medium.com/designer-recipes/how-to-make-a-custom-404-error-page-for-your-website-1af37a8b20d1
+# This will send all 404 errors to our custom error page.
+ErrorDocument 404 /error.php
+
+# @ref: https://alexcican.com/post/how-to-remove-php-html-htm-extensions-with-htaccess/
+# This removes the extension of the page, so site.com/index.php can be typed as site.com/index . 
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# @ref: http://www.htaccess-guide.com/setting-server-timezone/
+# sets the timezone for the website to Europe/Dublin
+SetEnv TZ Europe/Dublin

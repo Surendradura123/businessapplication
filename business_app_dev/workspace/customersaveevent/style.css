@@ -1,0 +1,75 @@
+body{
+    background-color:  white;
+}
+   
+textarea{
+    width:500px;
+    height:80px;
+    background-color:white;
+    resize:none;
+}
+
+button{
+    width:200px;
+    height:40px;
+    background-color: blue;
+    border:none;
+    color:white;
+    font-family: arial;
+    font-weight: 400;
+    cursor:pointer;
+}
+
+.comment-box{
+    
+    width:600px;
+    padding:20px;
+    margin-bottom:4px;
+    background-color: yellow;
+    border-radius:4px;
+    position: relative;
+    left:10px;
+    top:100px;
+}
+
+.comment-box p{
+    font-family:arial;
+    font-size: 16px;
+    line-height: 18px;
+    color:grey;
+    font-weight:100;
+}
+
+.edit-form{
+    position: absolute;
+     top:0px;
+    right:60px;
+}
+
+.edit-form button {
+    width:40px;
+    height:20px;
+  
+    opacity: 0.7;
+    
+}
+
+.edit-form button:hover {
+    opacity: 1;
+}
+
+.delete-form {
+    position: absolute;
+    top:0px;
+    right:0px;
+}
+
+.delete-form button {
+    width:50px;
+    height:20px;
+    opacity: 0.7;
+}
+
+.delete-form button:hover {
+    opacity: 1;
+}
